@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: voiceprint-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 3001
+    healthCheckPath: /api/printers
